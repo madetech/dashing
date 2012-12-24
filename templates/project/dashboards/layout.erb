@@ -9,6 +9,10 @@
   <title><%= yield_content(:title) %></title>
 
   <!-- The javascript and css are managed by sprockets. The files can be found in the /assets folder-->
+  <script type="text/javascript" src="//www.google.com/jsapi"></script>
+  <script>
+    google.load("visualization", "1", {packages:["corechart"]});
+  </script>
   <script type="text/javascript" src="/assets/application.js"></script>
   <link rel="stylesheet" href="/assets/application.css">
 
@@ -20,7 +24,7 @@
     <div id="container">
       <%= yield %>
     </div>
-  
+
     <% if development? %>
       <div id="saving-instructions">
         <p>Paste the following at the top of <i><%= params[:dashboard] %>.erb</i></p>
